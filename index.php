@@ -1,4 +1,6 @@
-﻿ <!DOCTYPE html>
+﻿<?php 
+require 'config.php';
+?> <!DOCTYPE html>
 <html lang="en">
 
 <?php include('include/head_style.php'); ?>
@@ -109,14 +111,13 @@
                             INNER JOIN si_unit units on productDetailsTable.weightunit = units.id ORDER BY productDetailsTable.itemposition ASC;";
                             $run=mysqli_query($con,$select);
                             
-                            $baseurl = "http://127.0.0.1:81/FSpride/";
                             while($row=mysqli_fetch_assoc($run)){
                             
                            ?>
                             <li class="item col-lg-3 col-md-3 col-sm-3 col-xs-6">
                               <div class="item-inner">
                           <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" src="<?php echo $baseurl.$row['productimage']; ?>"> </a>
+                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" src="<?php echo $SERVER_BASE_URL.$row['productimage']; ?>"> </a>
                               <div class="sale-label sale-top-right">- 40%</div>
                               <div class="box-hover">
                                 <ul class="add-to-links">
@@ -157,126 +158,6 @@
                            
                         </div>
                       </div>
-                              <!-- End  Item inner--> 
-                           <!--   
-                            <li class="item col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                              <div class="item-inner">
-                          <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.html"> <img alt="Retis lapen casen" src="img/p1.jpg"> </a>
-                            
-                              <div class="box-hover">
-                                <ul class="add-to-links">
-                                  <li><a class="link-quickview" href="quick_view.html"></a> </li>
-                                  <li><a class="link-wishlist" href="wishlist.html"></a> </li>
-                                  <li><a class="link-compare" href="compare.html"></a> </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="item-info">
-                            <div class="info-inner">
-                              <div class="item-title"> <a title="Retis lapen casenFresh Organic Mustard Leaves " href="product_detail.html">Fresh Organic Mustard Leaves  </a> </div>
-                              <div class="brand">Xperia</div>
-                              <div class="rating">
-                                <div class="ratings">
-                                  <div class="rating-box">
-                                    <div style="width:80%" class="rating"></div>
-                                  </div>
-                                  <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                                </div>
-                              </div>
-                              <div class="item-content">
-                                <div class="item-price">
-                                  <div class="price-box"><span class="regular-price"> <span class="price">88.00</span> </span>  <span class="old-price"><span class="price">199.00</span></span></div>
-                                </div>
-                                <div class="action">
-                                  <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><i class="fa fa-shopping-basket"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
-                              <!-- End  Item inner--> 
-                           <!--  </li>
-                            <li class="item col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                              <div class="item-inner">
-                          <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.html"> <img alt="Retis lapen casen" src="img/p1.jpg"> </a>
-                              <div class="new-label new-top-left">new</div>
-                              <div class="box-hover">
-                                <ul class="add-to-links">
-                                  <li><a class="link-quickview" href="quick_view.html"></a> </li>
-                                  <li><a class="link-wishlist" href="wishlist.html"></a> </li>
-                                  <li><a class="link-compare" href="compare.html"></a> </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="item-info">
-                            <div class="info-inner">
-                              <div class="item-title"> <a title="Fresh Organic Mustard Leaves " href="product_detail.html">Fresh Organic Mustard Leaves </a> </div>
-                              <div class="brand">Sunproto</div>
-                              <div class="rating">
-                                <div class="ratings">
-                                  <div class="rating-box">
-                                    <div style="width:80%" class="rating"></div>
-                                  </div>
-                                  <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                                </div>
-                              </div>
-                              <div class="item-content">
-                                <div class="item-price">
-                                  <div class="price-box"> <span class="regular-price"> <span class="price">275.00</span> </span> </div>
-                                </div>
-                                <div class="action">
-                                  <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><i class="fa fa-shopping-basket"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
-                              <!-- End  Item inner--> 
-                           <!--  </li> -->
-                            <!-- <li class="item col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                              <div class="item-inner">
-                          <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.html"> <img alt="Retis lapen casen" src="img/p1.jpg"> </a>
-                            
-                              <div class="box-hover">
-                                <ul class="add-to-links">
-                                  <li><a class="link-quickview" href="quick_view.html"></a> </li>
-                                  <li><a class="link-wishlist" href="wishlist.html"></a> </li>
-                                  <li><a class="link-compare" href="compare.html"></a> </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="item-info">
-                            <div class="info-inner">
-                              <div class="item-title"> <a title="Fresh Organic Mustard Leaves " href="product_detail.html"> Fresh Organic Mustard Leaves  </a> </div>
-                                <div class="brand">Impulse</div>
-                              <div class="rating">
-                                <div class="ratings">
-                                  <div class="rating-box">
-                                    <div style="width:80%" class="rating"></div>
-                                  </div>
-                                  <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                                </div>
-                              </div>
-                              <div class="item-content">
-                                <div class="item-price">
-                                  <div class="price-box"> <span class="regular-price"> <span class="price">88.00</span> </span> </div>
-                                </div>
-                               <div class="action">
-                                  <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><i class="fa fa-shopping-basket"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
-                              <!-- End  Item inner--> 
-                           <!--  </li> -->
-                         
                       
                       <!-- tab product -->
                       <div class="tab-panel " id="tab-2">
@@ -296,15 +177,14 @@
                             INNER JOIN farmer_details farmerDetails on farmerDetails.id = productsTable.farmerID 
                             INNER JOIN si_unit units on productDetailsTable.weightunit = units.id  WHERE productsTable.bestproduct=1    ORDER BY productDetailsTable.itemposition ASC;";
                             $run=mysqli_query($con,$select);
-                            
-                            $baseurl = "http://127.0.0.1:81/FSpride/";
+  
                             while($row=mysqli_fetch_assoc($run)){
                             
                            ?>
                           <li class="item col-lg-3 col-md-3 col-sm-3 col-xs-6">
                               <div class="item-inner">
                           <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" height="244" width="244" src="<?php echo $baseurl.$row['productimage']; ?>"> </a>
+                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" height="244" width="244" src="<?php echo $SERVER_BASE_URL.$row['productimage']; ?>"> </a>
                             
                               <div class="box-hover">
                                 <ul class="add-to-links">
@@ -670,8 +550,6 @@
                             INNER JOIN farmer_details farmerDetails on farmerDetails.id = productsTable.farmerID 
                             INNER JOIN si_unit units on productDetailsTable.weightunit = units.id ORDER BY productDetailsTable.itemposition ASC;";
                             $run=mysqli_query($con,$select);
-                            
-                            $baseurl = "http://127.0.0.1:81/FSpride/";
                             while($row=mysqli_fetch_assoc($run)){
                             
                            ?>
@@ -681,7 +559,7 @@
                         <div class="item-inner">
                          
                           <div class="item-img">
-                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" height="244" width="244" src="<?php echo $baseurl.$row['productimage']; ?>"> </a>
+                            <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="product_detail.php?product_id=<?php echo $row['id'] ?>"> <img alt="Retis lapen casen" height="244" width="244" src="<?php echo $SERVER_BASE_URL.$row['productimage']; ?>"> </a>
                               <div class="new-label new-top-left">new</div>
                               <div class="box-hover">
                                 <ul class="add-to-links">
